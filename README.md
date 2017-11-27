@@ -6,7 +6,7 @@ A few weeks into the quarter, you will form teams to complete this challenge.  T
 
 At the end of the quarter we will have a project fair, at which all the teams will show off what they did to the rest of the class. So do good work and build something impressive. Show off what you've learned, and make something you're really proud of. Take the time to design and build something that you'd be excited to show others and include in your portfolio.
 
-##Requirements
+## Requirements
 
 * What exactly you build is up to your group, but it must meet the following requirements:
 
