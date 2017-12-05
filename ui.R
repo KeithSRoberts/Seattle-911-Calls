@@ -70,10 +70,19 @@ ui <- fluidPage(theme = shinytheme("sandstone"),
               titlePanel("Calls by Crime in the Seattle Area"),
               sidebarLayout(
                sidebarPanel(
-                 #Dropdown month select widget here
+                 #Dropdown year and month select widget here
+                 selectInput("year", label = h3("Select Month"), 
+                             choices = list("2010"= "2010", "2011"="2011","2012"="2012","2014"="2014",
+                                            "2015"="2015", "2016"="2016", "2017"="2017"), selected = "2010"),
+                 selectInput("month", label = h3("Select Month"), 
+                             choices = list("January" = "01", "Feburary" = "02", "March" = "03", "April" = "04",
+                                            "May" ="05", "June"='6',"July"="07","August"='08',"September"='09',
+                                            "October"='10', "November"='11',"December"='12'), selected = "July"),
+                 tableOutput("stat")
                ),
                mainPanel(
-                  #Graph of frequency -> crime here   
+                  #Graph of frequency -> crime here 
+                 plotOutput("hist")
                )
               )
              )
