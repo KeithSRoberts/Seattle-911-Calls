@@ -1,35 +1,26 @@
-# team-mango-final
 
-## Summary
+Authors: Keith, Min, Matthew, Deanna
 
-A few weeks into the quarter, you will form teams to complete this challenge.  This is your final project, and each team can decide what they want to build.  More than anything, this project is an opportunity to stretch your skills by diving into a dataset that you find important/interesting.  As long as you meet the requirements below, the direction of your project can be quite flexible.
+This informatics (INFO 201) project is based off of a dataset containing records of 911 calls in the Seattle area from 2010 to 2017. Each record of the dataset offers insights about a 911 call made, including data such as the crime type, the call location, the date and time the call was made, etc.  The dataset was collected and published by the __City of Seattle__ and can be found on their government website [here.](https://data.seattle.gov/Public-Safety/Seattle-Police-Department-911-Incident-Response/3k2p-39jp)
 
-At the end of the quarter we will have a project fair, at which all the teams will show off what they did to the rest of the class. So do good work and build something impressive. Show off what you've learned, and make something you're really proud of. Take the time to design and build something that you'd be excited to show others and include in your portfolio.
+## Analysis
 
-## Requirements
+When approaching this dataset, we cultivated a few questions to answer with our visualizations that could be of use to the general population of the Seattle area. Our questions include:
 
-* What exactly you build is up to your group, but it must meet the following requirements:
+ 1. In what areas are certain crimes more frequent, and how does this differ each year?
+ 2. Are there patterns in frequency of crime in the span of a year (2010-2017)?
+ 3. Which type of crimes are more frequent in the Seattle Area?
 
-* Create an interactive platform using R.  This could be a report, slideshow, or interactive visualization (preferably compiled into a webpage for enhanced accessibility)
+We chose to answer these questions with a series of visualizations, which will be briefly described below. In summary, we found that certain areas do tend to have higher frequency in crimes, these areas include: Downtown Queen Anne (Downtown Seattle), and areas around Rainier Avenue (Columbia City Area). The crime density in these areas were fairly consistent over each year, and could be attributed to higher population density in those areas. Over the span of a year, there tends to be more crime calls in the later months of the year (November - December), but varies greatly from crime type. Lastly, the majority of calls often were regarding minor crimes such as suspicious circumstances, traffic offenses, or minor disturbances. Each of these questions are answered more effectively and in depth by interacting with our visualizations on the other tabs.
 
-* Choose a dataset of sufficient complexity to explore.  This doesn't mean it has to be Big Data, but it should either be of notable size (more than a few hundred observations), or complexity (more than ~5 features of each observation)
+## Visualizations
 
-* Demonstrate a nuanced understanding of the important features of the dataset.  High-level insights (important descriptive information, major trends, notable outliers, etc.) should be prominent in your resource.  Statistical analyses may be included if appropriate
+In this app you can find three different interactive visualizations of the dataset as follows:
 
-* Devise a visual representation of your data (i.e., chart, map, etc.).  Ideally, this should be an interactive visualization with ability to interact with the interface (hover, click, drag, etc.), or change the data being displayed (i.e., the chart responds to a set of controls, such as which data is being displayed)
+ 1. A map plotting the location of 911 calls in the Seattle area, including widgets to show markers by crime type and year of crime. The map also has a search box useful for observing calls in specific locations.
+ 2. A plot chart that describes the frequency of calls over a yearly span that includes menus to select the year and crime type of observations.
+ 3. A bar graph and table that identify the frequencies of each crime of a selected year and selected month.
+ 
+These visualizations were all made in R and utilized libraries/packages including ggplot2, leaflet, and shiny to display the visualizations. The code for these visualizations can be found on our [Github](https://github.com/KeithSRoberts/team-mango-final). 
 
-* Tailor your resource to a specific target audience.  The way you frame your solution for a scientific versus general audience is quite different
-
-## What to Include in the README
-* Link to the shiny project
-* Technical Aspects 
-  * Language
-  * Packages
-  * Brief overview of files
-* Authors Names
-* Domain
-* Shiny Project
-  * Description
-  * Domain Knowledge
-  * Questions focused
-  * Analysis
+Link to our Shiny app (the page you are on!) [here](https://keithroberts.shinyapps.io/team-mango-final/)
