@@ -41,13 +41,13 @@ server <- function(input, output) {
   #reactive function for filtering data using input values (month and year)
   crime.group <- reactive({
       #remove time from date column 
-      if (data[1,] %>% select(`Event Clearance Date`)== format('%m/%d/%Y %H:%M')) {
-        data$`Event Clearance Date` <- format(as.POSIXct(data$`Event Clearance Date`, format = '%m/%d/%Y %H:%M'), format = '%m/%d/%Y')
+      if (callData[1,] %>% select(`Event Clearance Date`)== format('%m/%d/%Y %H:%M')) {
+        callData$`Event Clearance Date` <- format(as.POSIXct(callData$`Event Clearance Date`, format = '%m/%d/%Y %H:%M'), format = '%m/%d/%Y')
       }
       #filter month and year count frequency of each crime type 
-      crime.type <- data %>% 
-        filter(format(as.Date(data$`Event Clearance Date`, "%m/%d/%Y"), "%m") == input$month &
-                 format(as.Date(data$`Event Clearance Date`, "%m/%d/%Y"), "%Y") == input$year) %>%
+      crime.type <- callData %>% 
+        filter(format(as.Date(callData$`Event Clearance Date`, "%m/%d/%Y"), "%m") == input$month &
+                 format(as.Date(callData$`Event Clearance Date`, "%m/%d/%Y"), "%Y") == input$year) %>%
         group_by(`Event Clearance SubGroup`) %>%
         summarize(frequency = n())
       
@@ -56,7 +56,7 @@ server <- function(input, output) {
     output$hist <- renderPlot({
       ggplot(crime.group(), aes(x = `Event Clearance SubGroup`, y = frequency)) +
         geom_bar(stat = "identity") + labs(x = "Crime Groups", y = "Crime Frequency") + 
-        ggtitle(paste0(input$month, "/",input$year, "crime type frequencies")) + coord_flip()
+        ggtitle(paste0(input$month, "/",input$year, " crime type frequencies")) + coord_flip()
     })
     #display stat table
     output$stat <- renderTable({

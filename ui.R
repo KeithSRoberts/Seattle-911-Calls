@@ -50,9 +50,7 @@ ui <- fluidPage(theme = shinytheme("sandstone"),
               sidebarLayout(
                 sidebarPanel(
                   #Radio button widget here
-                  radioButtons("year", "Select Year",
-                               c("2012"="p", "2013"="l")
-                  )
+                 
                   #Dropdown crime select here
                 ),
                 mainPanel(
@@ -71,7 +69,7 @@ ui <- fluidPage(theme = shinytheme("sandstone"),
               sidebarLayout(
                sidebarPanel(
                  #Dropdown year and month select widget here
-                 selectInput("year", label = h3("Select Month"), 
+                 selectInput("year", label = h3("Select Year"), 
                              choices = list("2010"= "2010", "2011"="2011","2012"="2012","2014"="2014",
                                             "2015"="2015", "2016"="2016", "2017"="2017"), selected = "2010"),
                  selectInput("month", label = h3("Select Month"), 
