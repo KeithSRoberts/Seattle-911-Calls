@@ -12,9 +12,8 @@ library(ggplot2)
 library(data.table)
 
 server <- function(input, output) {
-  #callData is the original csv
-  callData <- fread("data/Seattle_Police_Department_911_Incident_Response.csv", header = TRUE)
-  
+  #callData is the original csv, unzipped from bz2 format
+  callData <- fread(sprintf("bzcat %s | tr -d '\\000'", "data/Seattle_Police_Department_911_Incident_Response.csv.bz2"))
   
   ## KEITH's SERVER FUNCTIONS
   #Reactive Function for filtering widgets

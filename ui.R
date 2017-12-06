@@ -24,7 +24,9 @@ ui <- fluidPage(theme = shinytheme("sandstone"),
                                     sidebarLayout(
                                       sidebarPanel(
                                         # Put search by address widget here
-                                        textInput("search", h3("Search Map"), value = "Enter Address"),
+                                        helpText("Search using caps and abbreviated terms
+                                                  (e.g. W GREEN LAKE DR N)"),
+                                        textInput("search", h3("Search Map"), value = ""),
                                         actionButton("go", "Search"),
                                         # Put filter by crime widget here  
                                         selectInput("crime", label = h3("Choose Crime"), choices = sort(unique(callData$`Event Clearance Group`)), selected = "ACCIDENT INVESTIGATION"),
@@ -50,15 +52,15 @@ ui <- fluidPage(theme = shinytheme("sandstone"),
                                     sidebarLayout(
                                       sidebarPanel(
                                         selectInput(inputId = "YearInput", label = "Choose a Year:", 
-                                                    choices = c('2010' = 10, 
-                                                                '2011' = 11, 
-                                                                '2012' = 12,
-                                                                '2013' = 13,
-                                                                "2014" = 14,
-                                                                "2015" = 15,
-                                                                "2016" = 16,
-                                                                "2017" = 17),
-                                                    selected = '2017'),
+                                                    choices = c('2010' = 2010, 
+                                                                '2011' = 2011, 
+                                                                '2012' = 2012,
+                                                                '2013' = 2013,
+                                                                "2014" = 2014,
+                                                                "2015" = 2015,
+                                                                "2016" = 2016,
+                                                                "2017" = 2017),
+                                                    selected = '2010'),
                                         selectInput(inputId= "CrimeTypeInput", label = "Select a crime:", 
                                                     choices = sort(unique(callData$`Event Clearance Group`)), selected = "ACCIDENT INVESTIGATION")
                                       ),
